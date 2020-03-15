@@ -5,9 +5,6 @@
 // Complete the following fuction
 - (NSArray *)convertToHappy:(NSArray *)sadArray {
     NSMutableArray *preResult = [[NSMutableArray alloc] init];
-    if ([sadArray  isEqual: @[]]) {
-        return @[];
-    }
     if ([sadArray count] < 3) {
         return sadArray;
     }
@@ -31,13 +28,13 @@
 
 - (BOOL)isHappy:(NSArray *)array {
     for (int i = 1; i < [array count] - 1; i++) {
-           NSNumber *curentNum = [array objectAtIndex: i];
-           NSNumber *preNum = [array objectAtIndex: i - 1];
-           NSNumber *nextNum = [array objectAtIndex: i + 1];
-           if ([curentNum intValue] > [nextNum intValue] + [preNum intValue]) {
-               return false;
-           }
-       }
+        NSNumber *curentNum = [array objectAtIndex: i];
+        NSNumber *preNum = [array objectAtIndex: i - 1];
+        NSNumber *nextNum = [array objectAtIndex: i + 1];
+        if ([curentNum intValue] > [nextNum intValue] + [preNum intValue]) {
+            return false;
+        }
+    }
     return true;
 }
 
